@@ -90,14 +90,14 @@ public class Channel {
     public boolean equals(Object other) {
         if (other == this) {
             return true;
-        } else if (other instanceof Channel otherChannel) {
-            return Objects.equals(this.title, otherChannel.title) && Objects.equals(this.link, otherChannel.link)
-                    && Objects.equals(this.description, otherChannel.description)
-                    && Objects.equals(this.language, otherChannel.language)
-                    && Objects.equals(this.category, otherChannel.category)
-                    && Objects.equals(this.copyright, otherChannel.copyright)
-                    && Objects.equals(this.image, otherChannel.image)
-                    && Objects.equals(this.item, otherChannel.item);
+        } else if (other instanceof Channel) {
+            return Objects.equals(this.title, ((Channel) other).title) && Objects.equals(this.link, ((Channel) other).link)
+                    && Objects.equals(this.description, ((Channel) other).description)
+                    && Objects.equals(this.language, ((Channel) other).language)
+                    && Objects.equals(this.category, ((Channel) other).category)
+                    && Objects.equals(this.copyright, ((Channel) other).copyright)
+                    && Objects.equals(this.image, ((Channel) other).image)
+                    && Objects.equals(this.item, ((Channel) other).item);
         } else {
             return false;
         }

@@ -35,8 +35,8 @@ public class Rss {
     public boolean equals(Object other) {
         if (other == this) {
             return true;
-        } else if (other instanceof Rss otherRss) {
-            return Objects.equals(this.channel, otherRss.channel);
+        } else if (other instanceof Rss) {
+            return Objects.equals(this.channel, ((Rss) other).channel);
         } else {
             return false;
         }

@@ -43,9 +43,9 @@ public class Image {
     public boolean equals(Object other) {
         if (other == this) {
             return true;
-        } else if (other instanceof Image otherImage) {
-            return Objects.equals(this.title, otherImage.title) && Objects.equals(this.url, otherImage.url)
-                    && Objects.equals(this.link, otherImage.link);
+        } else if (other instanceof Image) {
+            return Objects.equals(this.title, ((Image) other).title) && Objects.equals(this.url, ((Image) other).url)
+                    && Objects.equals(this.link, ((Image) other).link);
         } else {
             return false;
         }

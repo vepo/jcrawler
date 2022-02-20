@@ -3,11 +3,13 @@ package io.vepo.jcrawler.uol;
 import java.util.Date;
 import java.util.Objects;
 
+import jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+
 public class Item {
     private String description;
     private String guid;
     private String link;
-    private Date pubDate;
+    private String pubDate;
 
     public Item() {
     }
@@ -36,11 +38,11 @@ public class Item {
         this.link = link;
     }
 
-    public Date getPubDate() {
+    public String getPubDate() {
         return pubDate;
     }
 
-    public void setPubDate(Date pubDate) {
+    public void setPubDate(String pubDate) {
         this.pubDate = pubDate;
     }
 
@@ -53,10 +55,10 @@ public class Item {
     public boolean equals(Object other) {
         if (other == this) {
             return true;
-        } else if (other instanceof Item otherItem) {
-            return Objects.equals(this.description, otherItem.description) && Objects.equals(this.guid, otherItem.guid)
-                    && Objects.equals(this.link, otherItem.link)
-                    && Objects.equals(this.pubDate, otherItem.pubDate);
+        } else if (other instanceof Item) {
+            return Objects.equals(this.description, ((Item) other).description) && Objects.equals(this.guid, ((Item) other).guid)
+                    && Objects.equals(this.link, ((Item) other).link)
+                    && Objects.equals(this.pubDate, ((Item) other).pubDate);
         } else {
             return false;
         }
